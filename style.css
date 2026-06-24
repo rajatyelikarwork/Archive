@@ -1,7 +1,9 @@
 /* Base (mobile-first) */
-      html,body{height:100%;margin:0;font-family:'Gill Sans', 'Gill Sans MT', serif;background:#fff;color:#111}
-      .wrap{max-width:1700px;margin:36px auto;padding:24px 20px;position:relative; min-height: 100vh;display:flex;flex-direction:column;align-items:center}
+      html,body{height:100%;margin:0;font-family:'Gill Sans', 'Gill Sans MT', serif;background:#fff;color:#111;overflow-x:hidden}
+      .wrap{width:100%;max-width:1700px;margin:36px auto;padding:24px 20px;position:relative; min-height: 100vh;display:flex;flex-direction:column;align-items:center}
       .layout{display:flex;flex-direction:row;flex-wrap:wrap;gap:20px;align-items:flex-start}
+      .container{width:100%}
+      .cat-con{width:100%}
       
       .left{display:flex;flex-direction:column;justify-content:center;width:50%;min-width:280px; font-size:15px;}
       .blue-box{width: 40%;min-width:260px;}
@@ -43,9 +45,10 @@
 
       .arc {
         display: grid;
-        grid-template-columns: repeat(3, minmax(300px, 1fr));
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
         gap: 24px;
         justify-items: center;
+        width: 100%;
       }
 
       .arc a {
@@ -53,6 +56,7 @@
         overflow: hidden;
         border-radius: 8px;
         aspect-ratio: 1 / 1;
+        width: 100%;
       }
 
       .arc img {
@@ -307,8 +311,7 @@
         }
 
         .nav a {
-          margin-right: 10px;
-          margin-bottom: 4px;
+          margin: 0 10px 4px;
         }
 
         .copyright {
@@ -320,6 +323,68 @@
           flex-direction: row;
           justify-content: center;
           position: static;
+        }
+      }
+
+      /* ===== INDEX PAGE OVERRIDES ===== */
+      .container {
+        width: 100%;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .arc {
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+        max-width: 980px;
+        margin: 0 auto;
+        gap: 18px;
+      }
+
+      @media (max-width: 768px) {
+        .arc {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 18px;
+        }
+
+        .arc a {
+          aspect-ratio: auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .wrap {
+          padding: 10px 12px;
+          margin: 10px auto;
+        }
+
+        .arc {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 18px;
+        }
+
+        .arc a {
+          aspect-ratio: auto;
+        }
+
+        .arc img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+
+        .logo {
+          width: 120px;
+          margin-bottom: 18px;
+        }
+
+        .nav {
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+
+        .nav a {
+          margin: 0 8px;
+          font-size: 12px;
         }
       }
 
